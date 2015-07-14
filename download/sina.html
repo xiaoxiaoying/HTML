@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
+    <title></title>
+
+    <style type="text/css" >
+        *{
+            margin: 0 auto;
+            padding: 0px;
+            background-color: #efefef;
+        }
+        #head{
+            width: 150px;
+            height: 150px;
+            background-image: url("img/icon.png");
+            align-items: center;
+            margin-top: 30px;
+            no-repeat: 0 0;
+            background-size: 100%;
+            background-size: cover;
+            -webkit-background-size: cover;
+        }
+        #android{
+            width: 580px;
+            height: 134px;
+            align-items: center;
+            margin-top: 16px;
+            margin-left: 30px;
+            margin-right: 30px;
+            background-image: url("img/android.png");
+            no-repeat: 0 0;
+            background-size: 100%;
+            background-size: cover;
+            -webkit-background-size: cover;
+        }
+        #ios{
+            width: 580px;
+            height: 134px;
+            margin-top: 30px;
+            align-items: center;
+            margin-left: 30px;
+            margin-right: 30px;
+            background-image: url("img/ios.png");
+            no-repeat: 0 0;
+            background-size: 100%;
+            background-size: cover;
+            -webkit-background-size: cover;
+        }
+        h3{
+            font-family: "Arial Normal";
+            font-weight: 400;
+            color: #999;
+            font-size: 12px;
+            margin-top: 45px;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="head">
+
+</div>
+    <div id="ios" align="center" onclick='window.open("https://itunes.apple.com/us/app/yi-you-wei-yi-er-sheng-yin/id975959103?l=zh&ls=1&mt=8")'>
+
+    </div>
+    <div id="android"  align="center" onclick='window.open("http://other-data.oss-cn-qingdao.aliyuncs.com/YiYou-sina.apk")'>
+
+    </div>
+
+    <h3 align="center">集千万美术玩家妙笔生花 <br style="height: 3px"/>美术社区热忱欢迎你的加入</h3>
+
+</body>
+<script type="text/javascript">
+    var winWidth;
+    var winHeight;
+    if (window.innerWidth) {
+
+        winWidth = window.innerWidth;
+
+    }
+    else if
+    ((document.body) && (document.body.clientWidth)) {
+
+        winWidth = document.body.clientWidth;
+
+    }
+
+    //获取窗口高度
+
+    if (window.innerHeight) {
+
+        winHeight = window.innerHeight;
+
+    }
+
+    else if ((document.body) && (document.body.clientHeight)) {
+
+        winHeight = document.body.clientHeight;
+
+    }
+
+    //通过深入Document内部对body进行检测，获取窗口大小
+
+    if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+
+        winHeight = document.documentElement.clientHeight;
+
+        winWidth = document.documentElement.clientWidth;
+
+    }
+    var x = winWidth-60;
+//    alert(x);
+    document.getElementById("ios").style.width = x+"px";
+    document.getElementById("ios").style.height = x/580*134 + "px";
+    document.getElementById("android").style.width = x+"px";
+    document.getElementById("android").style.height = x/580*134 + "px";
+    document.getElementById("head").style.width = winWidth/4+"px";
+    document.getElementById("head").style.height = winWidth/4 + "px";
+
+</script>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <title>艺友杯主页</title>
+
+
+    <script type='text/javascript' src="js/httpUtil.js"></script>
+    <script type='text/javascript' src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/cache.js"></script>
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0 auto;
+        }
+        .container {
+            text-align: center;
+        }
+        .imga {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .img1 {
+            width: 88%;
+        }
+        .img3 {
+            width: 40%;
+        }
+
+        .img4 {
+            width: 40%;
+        }
+
+        .header {
+            position: relative;
+        }
+
+        .headButton {
+            position: absolute;
+            top: 72%;
+            left: 2%;
+            color: #ff0000;
+        }
+
+        .headButton1 {
+            position: absolute;
+            top: 82%;
+            left: 2%;
+            /* background-image: image/but3.png
+            font-size: 1.3em; */
+            color: #ff0000;
+        }
+
+        .footer {
+            position: absolute;
+            /*position: relative;*/
+        }
+
+        .footButton {
+            position: absolute;
+            top: 10%;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var activity_id = 52;
+        var name;
+        var user_id;
+
+        //第一个参数是活动id，第二个是活动人数，第三个是用户ID
+        function setParameter(activyid, name, persion) {
+            activity_id = activyid;
+            this.name = name;
+            user_id = persion;
+            TempCache.setItem("activity_id",activyid);
+            TempCache.setItem("user_id",persion);
+        }
+        function getUrl(activityId, activity_type, order, name, page) {
+            return getHttp("activity", "query_activityWork") + "&activity_id=" + activityId + "&activity_type=" + activity_type + "&order=" + order + "&name=" + name + "&page=" + page + "&callback=?";
+        }
+        $(
+                function () {
+                    $(".headButton1").click(function () {
+                        setTo("Design.html", 2);
+                    });
+                    $(".headButton").click(function () {
+                        setTo("paint.html", 1);
+                    });
+                    $(".img3").click(function () {
+                        setTo("march.html", 1);
+                    });
+                    $(".img4").click(function () {
+                        setTo("march.html", 2);
+                    });
+                    function setTo(type, activity_type) {
+                        alert(getUrl(activity_id, activity_type, 0, "", 1));
+                        $.getJSON(getUrl(activity_id, activity_type, 0, "", 1), function (data) {
+                            alert(window.JSON.stringify(data));
+                            var json = eval(data);
+                            //var json = window.JSON.parse(data);
+//                            alert(" addressSubmit 35 id = " + window.JSON.stringify(data));
+                            if (json.s == true) {
+                                if (json.i.length == 0) {
+                                    if (type == "march.html")
+                                        window.location.href = "march1.html?activity_type=" + activity_type ;
+                                    else
+                                        window.location.href = type + "?data=0"  ;
+                                } else {
+                                    if (type == "march.html")
+                                        window.location.href = "march.html?activity_type=" + activity_type ;
+                                    else
+                                        window.location.href = type + "?data=1" ;
+                                }
+                            }
+
+                        });
+                    }
+                }
+        );
+    </script>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <div class="header">
+        <img class="imga" src="image/art01.png">
+
+        <div class="pic">
+            <a class="headButton" style="align:center">
+                <img class="img1" src="image/but1.png">
+            </a>
+            <a class="headButton1" style="align:center">
+                <img class="img1" src="image/but3.png">
+            </a>
+        </div>
+
+    </div>
+    <div class="footer">
+        <img class="imga" src="image/art02.png">
+
+        <div class="footButton">
+            <img class="img3" src="image/but2.png" >
+            <img class="img4" src="image/but4.png" >
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+

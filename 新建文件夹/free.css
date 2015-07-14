@@ -1,0 +1,56 @@
+* {
+    padding: 0px;
+
+    margin: 0 auto;
+}
+
+body{
+    background-color: #efefef;
+
+}
+
+hr {
+    width: auto;
+    height: 1px;
+    background-color: #d2d2d2;
+    border: 0px;
+}
+
+h3 {
+
+    display: inline-block;
+    zoom: 1;
+    color: #444444;
+
+    font-size: 14px;
+}
+
+input {
+    width: auto;
+    height: 25px;
+    border: 1px solid #d2d2d2;
+    padding-left: 5px;
+}
+
+#btn {
+    width: 320px;
+    height: 70px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    margin-top: 20px;
+    display: block;
+    background-image: url(http://admin.yiyouapp.com/activity/images/commit.png);
+    no-repeat: 0 0;
+    background-size: 100%;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+#back{
+    height: 80px;
+    background-color: white;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+

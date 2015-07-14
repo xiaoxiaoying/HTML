@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>填写收货地址</title>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
+    <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="js/prize.js"></script>
+    <link type="text/css" href="css/location_css.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/addressSubmit.js"></script>
+
+
+</head>
+<body>
+
+<div id="success" align="center" >
+
+    <div id="determine_back" align="center">
+        <h5 align="center" style="color: #444444; padding: 10px">提交成功，感谢您的参与···</h5>
+
+        <!--<div id="determine" align="center">确定 &lt;!&ndash;<img src="images/commit.png" id="return"  >&ndash;&gt;</div>-->
+        
+        <img id="determine" src="images/commit5.png">
+        <img id="gree" src="images/commit4.png" style="margin-top: 10px;">
+
+        <!--<div id="gree" align="center">再一次抽奖 &lt;!&ndash;<img src="images/commit.png" id="return"  >&ndash;&gt;</div>-->
+    </div>
+</div>
+<div align="form-inline" id="from">
+    <form>
+        <div align="center">
+            <label for="hidden_nativeplace" style="color: #b95042;padding-left: 20px;">温馨提示：</label>
+            <label for="hidden_nativeplace" style="color:#999; ">以下信息为必填项，漏填或不填表示放弃奖品，请填写真是信息</label>
+        </div>
+
+        <hr style="height: 1px;width: 100%;border: 0px solid #d2d2d2;background-color: #d2d2d2"/>
+
+        <div class="form-group" align="center">
+            <label for="hidden_nativeplace" style="color:#666; ">省 <input type='hidden' id='hidden_nativeplace'
+                                                                          name='nativeplace' value='0'/><span
+                    id='span_nativeplace'></span></label>
+
+
+            <label for="exampleInputEmail2" style="color:#666; "><label
+                    style="color:#b95042;">*&nbsp;</label>市</label>
+            <input type="hidden" class="form-control" id="exampleInputEmail2" placeholder="请选择">
+            <span id='span_nativeplace_son'></span>
+
+
+            <label for="exampleInputEmail2" style="color:#666; "><label
+                    style="color:#b95042;">*&nbsp;</label>县/区</label>
+            <input type="hidden" class="form-control" id='sec_nativeplace' placeholder="请选择">
+            <span id='span_nativeplace_sec'></span>
+        </div>
+        <script language="javascript" type="text/javascript" src="js/enums.js"></script>
+
+        <script language='javascript' type='text/javascript' src='js/nativeplace.js'></script>
+
+        <script language="javascript" type="text/javascript">MakeTopSelect("nativeplace", 0);</script>
+
+        <div align="center">
+            <label for="exampleInputEmail2" style="color:#666; width: 100px;"><label
+                    style="color:#b95042;padding-top: 50px">*&nbsp;</label>详细地址:</label>
+            <textarea class="address" rows="3" style="vertical-align: top;"></textarea>
+        </div>
+        <div align="center">
+            <label for="exampleInputEmail2" style="color:#666; width: 100px;"><label
+                    style="color:#b95042;">&nbsp;*&nbsp;</label>联系人：</label>
+            <input type="text" class="user_name" placeholder="请填真实姓名" align="center" style="vertical-align:middle;">
+        </div>
+        <div align="center">
+            <label for="exampleInputEmail2" style="color:#666; width: 100px;"><label
+                    style="color:#b95042;">&nbsp;*&nbsp;</label>手机号：</label>
+            <input type="number" class="mobile" placeholder="请填真实手机号" max="11">
+        </div>
+        <div align="center">
+            <label for="exampleInputEmail2" style="color:#666;width: 100px; "><label
+                    style="color:#b95042;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</label>QQ：</label>
+            <input type="number" class="QQ">
+        </div>
+        <div align="center">
+            <label for="exampleInputEmail2" style="color:#666;width: 100px; "><label
+                    style="color:#b95042;">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</label>邮编：</label>
+            <input type="number" class="postcode" pattern="[0-9]{5}(-[0-9]{4})?|[a-za-z]{1,2}d{1,2}s?d[a-za-z]{1,2}">
+        </div>
+        <hr style="height: 1px;width: 100%;border: 0px solid #d2d2d2;background-color: #d2d2d2"/>
+        <div id='submit' align="center" style="float: left">
+
+            <img id='submit_' src="images/commit.png" style="position: absolute;">
+
+            <h1 id="txt_su" style="position: absolute;color: white;font-size: 16px;" align="center">提交</h1>
+        </div>
+    </form>
+</div>
+
+
+</body>
+<script type="text/javascript">
+    $(function () {
+        var winWidth = window.innerWidth;
+        var winHeight = window.innerHeight;
+        if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+            winHeight = document.documentElement.clientHeight;
+            winWidth = document.documentElement.clientWidth;
+
+        }
+        document.getElementById("submit_").style.height = winWidth / 600 * 70 + "px";
+        document.getElementById("submit_").style.width = winWidth - 40 + "px";
+        document.getElementById("submit_").style.marginLeft = 20 + "px";
+        document.getElementById("txt_su").style.marginLeft = 20 + "px";
+        document.getElementById("txt_su").style.height = winWidth / 600 * 70 + "px";
+        document.getElementById("txt_su").style.width = winWidth - 40 + "px";
+
+
+        document.getElementById("success").style.height = document.getElementById("from").clientHeight + 100  + "px";
+        document.getElementById("determine_back").style.height = winWidth/640*300 + "px";
+        document.getElementById("success").style.width = winWidth + "px";
+        document.getElementById("determine").style.width = winWidth*0.7-40 + "px";
+        document.getElementById("determine").style.height = (winWidth*0.7-40)/520*70 + "px";
+        document.getElementById("gree").style.width = winWidth*0.7-40 + "px";
+        document.getElementById("gree").style.height = (winWidth*0.7-40)/520*70 + "px";
+
+    });
+</script>
+
+</html>

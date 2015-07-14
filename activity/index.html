@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<meta content="width=device-width, initial-scale=1.0" name="viewport"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+    <!--<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
+    <link href="css/wheel.css" type="text/css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="js/height.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.winning').hide();
+            $('.no-draw').hide();
+            $('#integral').hide();
+
+        });
+
+
+    </script>
+</head>
+<body>
+<div class="wheel">
+    <div id="head-top">
+        <div id="head_" style="width: auto;height: 1px;"></div>
+        <div id="lottery" style="position: relative;">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td id="0" class="lottery-unit lottery-unit-0"><img id="im_1" src="images/1.png"></td>
+                    <td id="1" class="lottery-unit lottery-unit-1"><img id="im_2" src="images/2.png"></td>
+                    <td id="2" class="lottery-unit lottery-unit-2"><img id="im_3" src="images/3.png"></td>
+                </tr>
+                <tr>
+                    <td id="7" class="lottery-unit lottery-unit-7"><img id="im_4" src="images/4.png"></td>
+                    <td id="a_" colspan="1" rowspan="1"><a id="a_5" href="#"></a></td>
+                    <td id="3" class="lottery-unit lottery-unit-3"><img id="im_5" src="images/5.png"></td>
+                </tr>
+                <tr>
+                    <td id="6" class="lottery-unit lottery-unit-6"><img id="im_6" src="images/6.png"></td>
+                    <td id="5" class="lottery-unit lottery-unit-5"><img id="im_7" src="images/7.png"></td>
+                    <td id="4" class="lottery-unit lottery-unit-4"><img id="im_8" src="images/8.png"></td>
+                </tr>
+            </table>
+        </div>
+        <!-- 关于积分抽奖获取规则-->
+        <div id="integral" style="width:auto; height:auto; position: absolute;margin-top: 10px;">
+           <!-- <div id="txt">
+                <div style="background: #efefef;">
+                    <label style="color: #b95042;padding-left: 20px;">温馨提示：</label>
+                    <label style="color:#999; ">以下信息为艺友获取积分的方式，通过以下方式可获取积分参与抽奖</label>
+                </div>
+                <div style="background: #efefef;">
+                    <label style="color: #444;padding-left: 20px;">注 &nbsp;&nbsp;册：</label>
+                    <label style="color: #b95042;">10积分</label>
+                    <label style="color:#999; ">(每个用户限一次)</label>
+                </div>
+                <div style="background: #efefef;">
+                    <label style="color: #444;padding-left: 20px;">登 &nbsp;&nbsp;录：</label>
+                    <label style="color: #b95042;">2积分</label>
+                    <label style="color:#999; ">(每天限1次，2次登录无积分)</label>
+                </div>
+                <div style="background: #efefef;">
+                    <label style="color: #444;padding-left: 20px;">发布作品：</label>
+                    <label style="color: #b95042;">2积分</label>
+                    <label style="color:#999; ">(每个作品发布获取2分，每天最多5个作品；第6次作品无积分获取)</label>
+                </div>
+                <div style="background: #efefef;">
+                    <label style="color: #444;padding-left: 20px;">作品评论：</label>
+                    <label style="color: #b95042;">2积分</label>
+                    <label style="color:#999; ">(每个评论获取2分，每天最多5个评论；第6次评论无积分获取)</label>
+                </div>
+                <div style="background: #efefef;">
+                    <label style="color: #444;padding-left: 20px;">点 &nbsp;&nbsp;赞：</label>
+                    <label style="color: #b95042;">1积分</label>
+                    <label style="color:#999; ">(每个赞获取2分，每天最多5个赞；第6次赞无积分获取)</label>
+                </div>
+                <div style="background: #efefef;padding-bottom: 20px;">
+                    <label style="color: #444;padding-left: 20px;">转 &nbsp;&nbsp;发：</label>
+                    <label style="color: #b95042;">5积分</label>
+                    <label style="color:#999; ">(每天无次数限制)</label>
+                </div>
+            </div>-->
+            <img id="inte" src="images/inte.png" style="position: absolute;margin-top: 10px;">
+            <img id="close_" src="images/agree_close.png" style="position: absolute;width: 25px;">
+        </div>
+        <div id="number-back" style="float: left;" align="center">
+            <!-- 积分获取按钮 -->
+            <!--<div id="number" >-->
+            <!--</div>-->
+            <img id="number_" src="images/way.png">
+            <!-- 获奖名单 -->
+            <!--<div id="prize-people">-->
+            <!--</div>-->
+            <img id="prize-people" src="images/bear.png">
+        </div>
+    </div>
+
+
+    <div id="action-back">
+        <img src="images/activity_tule.png" style="width: 100%">
+    </div>
+
+</div>
+
+
+<!--抽奖后提示框-->
+<div class="winning" id="winning">
+    <div class="back" id="back" align="center">
+        <div class="prize-back" id="prize-back" align="center">
+
+        </div>
+        <div id="text_honit" align="center">
+            <canvas id="mycanvas"></canvas>
+        </div>
+        <h4 id="text-prize" align="center"></h4>
+
+        <div class="next" id="next"></div>
+    </div>
+</div>
+
+<!--抽奖时间没有到和已经抽过一次了-->
+
+<div class="no-draw" id="no-draw">
+    <div id="draw-back" align="center">
+        <h4 id="hint" align="center"></h4>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/prize.js"></script>
+</html>

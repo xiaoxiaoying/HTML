@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
+    <script type="text/javascript" src="http://admin.yiyouapp.com/activity/js/freejquery.min.js"></script>
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0 auto;
+
+        }
+        body{
+            background-color: #4eaec2;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            var winWidth = window.innerWidth;
+            document.getElementById("pain1").style.width = winWidth + "px";
+            document.getElementById("pain2").style.width = winWidth + "px";
+            document.getElementById("pain2").style.marginTop = winWidth/640*1614 + "px";
+            document.getElementById("pain3").style.marginTop = (winWidth/640*1614 + winWidth/640*887) + "px";
+            document.getElementById("pain_up1").style.width =winWidth/640 * 300  + "px";
+            document.getElementById("pain_up1").style.marginLeft =winWidth/2 - winWidth/640 * 300 / 2  + "px";
+            document.getElementById("pain_up").style.marginLeft =winWidth/2 - winWidth/640 * 300 / 2  + "px";
+            document.getElementById("pain_up").style.width =winWidth/640 * 300  + "px";
+            document.getElementById("pain_up").style.marginTop =winWidth/640 * 50  + "px";
+            document.getElementById("pain_up1").style.marginTop =winWidth/640 * 1990  + "px";
+            document.getElementById("pain4").style.width =winWidth  + "px";
+        });
+        $(document).ready(
+                function(){
+                    $("#pain_up1").click(
+                            function(){
+                                window.location.href = 'sing_up.html';
+                            }
+                    );
+                    $("#pain_up").click(
+                            function(){
+                                window.location.href = 'sing_up.html';
+                            }
+                    );
+                }
+        );
+    </script>
+</head>
+<body>
+<div style="position: absolute">
+    <img id="pain1" src="img/design_1.png" style="position: absolute">
+    <img id="pain_up" src="img/to_sign_up.png" style="position: absolute">
+</div>
+<img id="pain2" src="img/design_2.png" style="position: absolute">
+<div id="pain3"style="position: absolute" >
+    <img id="pain4" src="img/design_3.png" style="position: absolute">
+    <img  id="pain_up1" src="img/to_sign_up.png" style="position: absolute">
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
+    <script type="text/javascript" src="http://admin.yiyouapp.com/activity/js/freejquery.min.js"></script>
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0 auto;
+
+        }
+        body{
+            background-color: #4eaec2;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            var winWidth = window.innerWidth;
+            document.getElementById("01").style.width = winWidth + "px";
+            document.getElementById("02").style.width = winWidth + "px";
+            document.getElementById("painting").style.width =winWidth/640 * 580  + "px";
+            document.getElementById("design").style.width =winWidth/640 * 580  + "px";
+            document.getElementById("03").style.width =winWidth/640 * 300  + "px";
+            document.getElementById("03").style.marginTop =winWidth/640 * 60  + "px";
+            document.getElementById("03").style.marginLeft =winWidth/2 - winWidth/640 * 300/2  + "px";
+            document.getElementById("cli").style.marginTop =winWidth/640 * 1140  + "px";
+            document.getElementById("btm").style.marginTop =winWidth/640 * 1544 + "px";
+        });
+        $(document).ready(
+                function(){
+                    $("#painting").click(
+                            function(){
+                                window.location.href = 'painting.html';
+                            }
+                    );
+                    $("#design").click(
+                            function(){
+                                window.location.href = 'design.html';
+                            }
+                    );
+                    $("#03").click(
+                            function(){
+                                window.location.href = 'sing_up.html';
+                            }
+                    );
+                }
+        );
+    </script>
+</head>
+<body>
+<div style="position:static;">
+
+    <img id="01" src="img/01.png" style="position: absolute;">
+    <div id="cli" style="position: absolute;" align="center">
+        <img id="painting" src="img/painting_.png" >
+        <img id="design" src="img/design_.png" >
+    </div>
+
+</div>
+<div id="btm" style="position: absolute;" align="center">
+    <img id="02" src="img/02.png" style="position: absolute;">
+    <img id="03" src="img/to_sign_up.png" style="position: absolute;">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <meta charset="UTF-8">
+    <title>第一人参赛</title>
+
+
+    <script type='text/javascript' src="js/jquery-2.1.1.min.js"></script>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet"
+          href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var data = window.location.search;
+            var val = data.split("=");
+            var photoType = val[1];
+            $("#upload_work").click(
+                    function () {
+                        window.location.href = "action.photo#upload#upload_activityWork#" + photoType;
+                    }
+            );
+        });
+    </script>
+    <style>
+        .container {
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .header {
+            position: relative;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img src="02.png">
+    </div>
+
+</div>
+<div id="upload_work" align="center" style="margin: 20px;">
+    <img src="image/setwork.png">
+
+</div>
+
+
+</body>
+</html>

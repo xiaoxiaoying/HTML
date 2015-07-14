@@ -1,0 +1,303 @@
+* {
+    padding: 0px;
+}
+
+body {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    background-color: #f4e53c;
+}
+
+/*头部*/
+#head-top {
+    width: 640px;
+    height: 1018px;
+    margin: 0px auto;
+    padding: 0px;
+    background-image: url("../images/draw_back.png");
+    background-size: cover;
+    -webkit-background-size: cover;
+    /* //兼容Webkit内核浏览器如Chrome和Safari */
+    /*兼容Opera */
+    -o-background-size: cover;
+}
+
+#lottery {
+    width: 570px;
+    height: 570px;
+    margin: 0px auto;
+    background-image: url("../images/wheel.png");
+    background-size: cover;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+}
+
+#number {
+    width: 253px;
+    height: 53px;
+    /* background-image: url("../images/way.png");
+     background-size: cover;
+     background-size: 100%;
+     -webkit-background-size: cover;
+     -o-background-size: cover;*/
+}
+
+#prize-people {
+    width: 253px;
+    height: 53px;
+    /*    background-image: url("../images/bear.png");
+        background-size: cover;
+        background-size: 100%;
+        -webkit-background-size: cover;
+        -o-background-size: cover;*/
+}
+
+#lottery table td {
+    width: 190px;
+    height: 190px;
+    text-align: center;
+
+}
+
+#lottery table td a {
+    width: 190px;
+    height: 190px;
+
+    line-height: 150px;
+    display: block;
+    text-decoration: none;
+    background-image: url("../images/draw_click.png")
+}
+
+#lottery table td.active {
+    width: 190px;
+    height: 190px;
+    background-image: url("../images/pick_on.png");
+}
+
+#txt {
+    margin: 20px;
+    border-radius: 6px;
+}
+#txt div{
+   padding: 5px;
+    position: absolute;
+    margin-top: 10px;
+}
+
+
+/*
+#light {
+    position: relative;
+    width: 100%;
+    height: 556px;
+    margin: 0px auto;
+    background-image: url("../images/light.png");
+    /!*overflow:hidden;*!/
+    background-size:cover;
+}
+ #rotate{
+    width: 503px;
+    height: 556px;
+    background: url(../images/button.png)
+    no-repeat 0 0;
+    position: relative;
+    background-size:100%;
+     background-size: cover;
+}
+#pointer{
+    width: 502px;
+    height: 502px;
+    position: absolute;
+    margin: 0 auto;
+    background: url(../images/wheel.png)
+    no-repeat 0 0;
+    float:left;
+    background-size:cover;
+}
+#text_honit{
+    position: relative;
+    top: 33%;
+}
+.button-text {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    background: url(../images/button_text.png)
+    no-repeat 0 0;
+    top: 34.5%;
+    background-size: cover;
+}
+.footer {
+    width:auto;
+    height: auto;
+    position: relative;
+    color: #625a05;
+    padding: 40px;
+    font-size: 13px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#prize-setting {
+    position: relative;
+    width: 100%;
+    height: 1060px;
+    margin: 0 auto;
+    background-image: url("../images/prize.png");
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+#prize {
+    width: auto;
+    position: relative;
+    height: auto;
+    margin: 0px;
+    top: 45px;
+    background-image: url("../images/prize_setting.png");
+    background-size: cover;
+}
+
+#action-back {
+    width: 100%;
+    height: 340px;
+    position: relative;
+    margin: 0 auto;
+    background-image: url("../images/action_back.png");
+    background-size: cover;
+}
+
+
+#action {
+    width: auto;
+    height: auto;
+    position: relative;
+    margin: 0px;
+    top: 45px;
+    background-image: url("../images/action.png");
+    background-size: cover;
+}
+
+
+#action-people {
+    width: 210px;
+    height: 40px;
+    position: absolute;
+    background-image: url("../images/number.png");
+    background-size: cover;
+}
+
+
+
+
+#number{
+    background-image: url("../images/number_back.png");
+    width: 280px;
+    height: 40px;
+    /!*overflow:hidden;*!/
+    /!*align-content: center;*!/
+    position: absolute;
+    margin-top: 10px;
+    /!*padding-top: 20px;*!/
+    left: 10%;
+    background-size: cover;
+}
+#number-back{
+    width: 100%;
+    margin: 0 auto;
+}
+#prize-people{
+    background-image: url("../images/prize_people.png");
+    width: 200px;
+    height: 70px;
+    position: relative;
+    padding-top: -15px;
+    float: left;
+    left: 60%;
+    background-size: cover;
+}
+
+.back {
+    width: 640px;
+    height: 640px;
+    background-image: url("../images/prize_back.png");
+    margin: 0 auto;
+    position: relative;
+    top: 200px;
+    background-size: cover;
+}
+
+.prize-back {
+    width: 330px;
+    height: 240px;
+    background-image: url(../images/first_prize.png);
+
+    position: relative;
+    top: 31.5%;
+    background-size: cover;
+}
+
+
+.next{
+
+    width: 223px;
+    height: 62px;
+    position: absolute;
+    /!*left: 33%;*!/
+    background-image: url("../images/next.png");
+    background-size: cover;
+}
+
+
+ /!*抽奖页面*!/
+.wheel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0 auto;
+}
+/!*抽奖后提示*!/
+.winning {
+    width: 100%;
+    background:rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    padding: 0px;
+    filter:alpha(Opacity=50);
+    align-items: center;
+    position: relative;
+}
+
+
+/!*抽过奖提示*!/
+.no-draw {
+    width: 100%;
+    background:rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    padding: 0px;
+    filter:alpha(Opacity=50);
+    position:absolute;
+    -o-background-size: cover;
+
+}
+#draw-back {
+    width: 580px;
+    height: 140px;
+    background-image: url(../images/prize_back_next.png);
+    margin: 0 auto;
+    margin-top: 30%;
+    background-size: cover;
+
+}
+#hint {
+    margin: 0 auto;
+    position: relative;
+
+    color: #480000;
+    font-size: 13px;
+}
+*/

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/css/demo.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/css/images/icons.ttf" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/css/images/icons.woff" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/css/jquery.mobile.iscrollview-pull.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/css/jquery.mobile.iscrollview.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/image/ajax-loader_blue.gif" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/image/spinner_squares_circle.gif" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/js/demo.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/js/exif.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/httpUtil.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/iscroll.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/js/jquery.mobile.iscrollview.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/js/layer_xy_hack.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/js/loading-overlay.min.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/js/lrz.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/march.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/mobileFix.mini.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/pull-example.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/js/scale.js" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="js/prize.js"></script>
+
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0 auto;
+        }
+
+        #lottery {
+            width: 570px;
+            height: 570px;
+            margin: 20px auto 0;
+            background: url(images/wheel.png) no-repeat;
+            /*margin-left: 35%;*/
+            /*margin-top: 80%;*/
+            background-size: cover;
+            background-size: 100%;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
+        }
+
+        #lottery table td a {
+            width: 190px;
+            height: 190px;
+            line-height: 150px;
+            display: block;
+            text-decoration: none;
+            background: url(images/draw_click.png);
+            background-size: cover;
+            background-size: 100%;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
+        }
+
+
+        #lottery table td.active {
+            background: url(images/pick_on.png);
+            background-size: cover;
+            background-size: 100%;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
+        }
+
+        #back {
+            width: 640px;
+            height: 640px;
+            background: url("images/winning.png");
+            background-size: cover;
+            background-size: 100%;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+        }
+
+        #prize-back {
+            width: 190px;
+            height: 190px;
+            background-image: url("images/1.png");
+            background-size: cover;
+            background-size: 100%;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            position: absolute;
+            margin-top: 30%;
+        }
+
+        #next {
+            width: 520px;
+            height: 70px;
+            position: absolute;
+        }
+
+
+        #success {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+            padding: 0px;
+            filter: alpha(Opacity=50);
+            align-items: center;
+            position: absolute;
+            z-index: 1000;
+        }
+
+        #determine {
+            background-image: url("images/commit2.png");
+            width: 600px;
+            height: 70px;
+            margin: 0 auto;
+            background-size: cover;
+            background-size: 100%;
+            color: white;
+            font-size: 58px;
+            text-align: center;
+        }
+
+        #determine_back {
+            background-color: white;
+            width: 80%;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 6px;
+
+        }
+
+        #gree {
+            background-image: url("images/commit1.png");
+            width: 520px;
+            height: 70px;
+            margin: 0 auto;
+            background-size: cover;
+            background-size: 100%;
+            color: white;
+            font-size: 58px;
+            margin-top: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        $(function () {
+
+            $('#hit').hide();
+            $('#in_student').hide();
+            $('#integral').hide();
+            $('#success').hide();
+            var winWidth = window.innerWidth;
+            var winHeight = window.innerHeight;
+            document.getElementById("hit").style.width = winWidth + "px";
+            document.getElementById("in_student").style.width = winWidth + "px";
+            document.getElementById("in_student").style.height = document.getElementById("head-top").clientHeight + document.getElementById("action-back").clientHeight + "px";
+
+
+
+
+
+            document.getElementById("text_honit").style.marginTop = winHeight / 2 - 145 + "px";
+            document.getElementById("text_honit").style.marginLeft = winWidth / 2 - (winWidth / 640 * 520 - 40) / 2 - 20 + "px";
+
+
+            document.getElementById("hit").style.height = document.getElementById("head-top").clientHeight + document.getElementById("action-back").clientHeight + "px";
+
+            /* 修改好的 */
+            document.getElementById("success").style.height = document.getElementById("head-top").clientHeight + document.getElementById("action-back").clientHeight + "px";
+            document.getElementById("determine_back").style.height = 96+ (winWidth * 0.7 - 40) / 520 * 70 * 2 + "px";
+            document.getElementById("determine_back").style.marginTop = winHeight / 2 - document.getElementById("determine_back").clientHeight/2  + "px";
+            document.getElementById("success").style.width = winWidth + "px";
+            document.getElementById("determine").style.width = winWidth * 0.7 - 40 + "px";
+            document.getElementById("determine").style.height = (winWidth * 0.7 - 40) / 520 * 70 + "px";
+            document.getElementById("gree").style.width = winWidth * 0.7 - 40 + "px";
+            document.getElementById("gree").style.height = (winWidth * 0.7 - 40) / 520 * 70 + "px";
+
+            document.getElementById("next").style.width = winWidth / 640 * 520 - 40 + "px";
+            document.getElementById("next").style.height = (winWidth / 640 * 520 - 40) / 520 * 70 + "px";
+            document.getElementById("next").style.marginLeft = winWidth / 2 - (winWidth / 640 * 520 - 40) / 2 + "px";
+            document.getElementById("next").style.marginTop = winWidth / 2 +winWidth / 640 * 190 / 2 + 60 + "px";
+
+            document.getElementById("select_in").style.width = winWidth / 640 * 520 - 40 + "px";
+            document.getElementById("break").style.width = winWidth / 640 * 520 - 40 + "px";
+            document.getElementById("in_back").style.width = winWidth - 40 + "px";
+            document.getElementById("in_back").style.height = 118 + document.getElementById("select_in").clientHeight+document.getElementById("break").clientHeight + "px";
+            document.getElementById("in_back").style.marginTop = winHeight / 2 - document.getElementById("in_back").clientHeight/2 + "px";
+
+            document.getElementById("lottery").style.width = winWidth / 640 * 570 + "px";
+            document.getElementById("lottery").style.height = winWidth / 640 * 570 + "px";
+            document.getElementById("lottery").style.marginLeft = (winWidth  - winWidth / 640 * 570)/2 + "px";
+            document.getElementById("lottery").style.marginTop =  winWidth / 640 * 260 + "px";
+
+            document.getElementById("1").style.width = winWidth / 640 * 190 +"px";
+            document.getElementById("2").style.width = winWidth / 640 * 190 +"px";
+            document.getElementById("3").style.width = winWidth / 640 * 190 +"px";
+            document.getElementById("4").style.width = winWidth / 640 * 190 +"px";
+            document.getElementById("5").style.width = winWidth / 640 * 190 +"px";
+            document.getElementById("6").style.width = winWidth / 640 * 190 +"px";
+            document.getElementById("7").style.width = winWidth / 640 * 190 +"px";
+            document.getElementById("8").style.width = winWidth / 640 * 190 +"px";
+
+            document.getElementById("a").style.width = winWidth / 640 * 190 +"px";
+            document.getElementById("a").style.height = winWidth / 640 * 190 +"px";
+
+            document.getElementById("number_").style.width = winWidth / 640 * 253 +"px";
+            document.getElementById("prize-people").style.width = winWidth / 640 * 181 +"px";
+            document.getElementById("prize-people").style.marginLeft = winWidth - winWidth / 640 * 321 +"px";
+
+            document.getElementById("number-back").style.marginTop =winWidth/640 * 50 + "px";
+            document.getElementById("number-back").style.marginLeft =winWidth/640 * 70 + "px";
+
+            document.getElementById("back").style.width =winWidth + "px";
+            document.getElementById("back").style.height =winWidth + "px";
+            document.getElementById("back").style.marginTop =winHeight/2 - winWidth/2 + "px";
+
+            document.getElementById("prize-back").style.width = winWidth / 640 * 190 + "px";
+            document.getElementById("prize-back").style.height = winWidth / 640 * 190 + "px";
+            var h = winWidth / 640 * 190;
+            document.getElementById("prize-back").style.marginLeft = winWidth / 2 - h / 2  + "px";
+            document.getElementById("prize-back").style.marginTop = winWidth / 2 - h / 2 + 5 + "px";
+            document.getElementById("inte").style.width = winWidth - 80 + "px";
+            document.getElementById("inte").style.marginLeft = 40 + "px";
+            document.getElementById("close_").style.width = winWidth/640*30 + "px";
+            document.getElementById("close_").style.marginLeft = winWidth - 50 + "px";
+            document.getElementById("inte").style.marginTop = winWidth/640 * 15 + "px";
+            document.getElementById("integral").style.marginTop = (winHeight  - (winWidth - 80)/640*724)/2 + "px";
+
+        });
+
+
+    </script>
+</head>
+<body>
+
+<!-- 积分不够时提醒页面 -->
+<div id="in_student" align="center" style="
+            position: absolute;background-color: rgba(0,0,0,0.5);z-index:1000;">
+    <div id="in_back" align="center" style="background-color: white;border-radius: 6px;height: 400px;">
+        <h3 style="  font-size: 18px;padding: 30px;">非常抱歉！您不够50积分。</h3>
+        <!--<div id="select_in">获取积分方式</div>-->
+        <img id="select_in" src="images/commit_ji.png"/>
+        <!--<div id="break">返回</div>-->
+        <img id="break" src="images/commit_back.png" style="margin-top: 20px"/>
+    </div>
+</div>
+<div class="wheel">
+    <div id="head-top">
+
+        <!-- 抽奖成功，只是积分的时候 -->
+        <div id="success" align="center" style="position: absolute;z-index: 1000;">
+
+            <div id="determine_back" align="center">
+                <h5 align="center" style="color: #444444; padding: 20px;font-size: 16px;">提交成功，感谢您的参与···</h5>
+                <img id="determine" src="images/commit5.png">
+                <img id="gree" src="images/commit4.png" style="margin-top: 10px;">
+
+            </div>
+        </div>
+        <!--抽奖后提示框-->
+        <div id="hit" align="center" style="
+            position: absolute;background-color: rgba(0,0,0,0.5);z-index:1000;">
+            <div class="back" id="back" align="center">
+                <div class="prize-back" id="prize-back" align="center">
+
+                </div>
+                <div id="text_honit" align="center" style="position: absolute">
+                    <canvas id="mycanvas"></canvas>
+                </div>
+                <!--<h4 id="text-prize" align="center"></h4>-->
+
+                <!--<div class="next" id="next" align="center"> 下一步</div>-->
+                <img class="next" id="next" src="images/next_1.png"/>
+
+            </div>
+        </div>
+        <div style="position: absolute;" align="center">
+
+            <!-- 关于积分抽奖获取规则-->
+            <div id="integral"
+                 style="width:auto; height:auto; position: absolute;display: none;z-index: 1000;">
+
+                <img id="inte" src="images/inte.png" style="position: absolute;">
+                <img id="close_" src="images/agree_close.png"
+                     style="position: absolute;width: 35px;">
+            </div>
+            <!-- 代码 开始 -->
+            <div id="lottery" align="center">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="lottery-unit lottery-unit-0"><img id="1" src="images/1.png"></td>
+                        <td class="lottery-unit lottery-unit-1"><img id="2" src="images/2.png"></td>
+                        <td class="lottery-unit lottery-unit-2"><img id="3" src="images/3.png"></td>
+                    </tr>
+                    <tr>
+                        <td class="lottery-unit lottery-unit-7"><img id="4" src="images/4.png"></td>
+                        <td colspan="1" rowspan="1"><a id="a" href="#"></a></td>
+                        <td class="lottery-unit lottery-unit-3"><img id="5" src="images/5.png"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="lottery-unit lottery-unit-6"><img id="6" src="images/6.png"></td>
+                        <td class="lottery-unit lottery-unit-5"><img id="7" src="images/7.png"></td>
+                        <td class="lottery-unit lottery-unit-4"><img id="8" src="images/8.png"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="number-back" style="float: left;">
+                <!-- 积分获取按钮 -->
+                <img id="number_" src="images/way.png" style="position: absolute;">
+                <!-- 获奖名单 -->
+                <img id="prize-people" src="images/bear.png" style="position: absolute;">
+            </div>
+        </div>
+        <img id="back_" src="images/draw_back.png" style="width: 100%;"/>
+    </div>
+
+
+    <div id="action-back">
+        <img src="images/activity_tule.                                         +
+        png" style="width: 100%">
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
